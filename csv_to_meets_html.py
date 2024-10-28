@@ -90,7 +90,10 @@ def csv_to_html(csv_filename, output_folder):
                 name = row[2]
                 time = row[4]
                 profile_pic = row[7]
-
+                athlete_image_folder = "images/profiles/"
+                athlete_image_path = os.path.join(athlete_image_folder, profile_pic)
+                if not os.path.exists(athlete_image_path):
+                    profile_pic = "default_image.jpg"
                 # Add the athlete div
                 html_content += f"""
 <div class="athlete">

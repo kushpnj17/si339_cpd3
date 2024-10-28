@@ -19,25 +19,26 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 a {
     text-decoration: none;
-    color: #000; /* Black for initial contrast */
-    transition: color 0.3s;
+    color: #000;
+    transition: color 0.3s ease-in-out;
 }
 
-/* Improved Link Hover for Accessibility */
 a:hover, a:focus {
-    color: #ffcc00; /* Accessible darker blue for light backgrounds */
+    color: #ffcc00;
 }
 
-/* Header Styles */
+/* Header Animation */
 header {
     background-color: #0066cc;
     color: white;
     padding: 1rem;
     text-align: center;
+    animation: slideInDown 1.2s ease-out;
 }
 
 header h1 a {
@@ -50,13 +51,14 @@ header h2 {
     font-size: 1.5rem;
 }
 
-/* Navigation */
+/* Navigation with Animation */
 nav ul {
     list-style: none;
     padding: 1rem;
     background-color: #004080;
     display: flex;
     flex-direction: column;
+    animation: slideInLeft 0.8s ease-out;
 }
 
 nav li {
@@ -66,14 +68,14 @@ nav li {
 nav a {
     color: white;
     font-size: 1.2rem;
+    transition: color 0.3s, transform 0.2s;
 }
 
-/* Improved Hover for Links in Navigation */
 nav a:hover, nav a:focus {
-    color: #ffcc00; /* Yellow for better contrast against dark nav */
+    color: #ffcc00;
+    transform: scale(1.05);
 }
 
-/* Skip to Content */
 a[href="#main"] {
     position: absolute;
     top: -40px;
@@ -85,16 +87,6 @@ a[href="#main"]:focus {
     top: 10px;
 }
 
-/* Main Content Styles */
-main {
-    padding: 1rem;
-}
-
-/* Section Styling */
-section {
-    margin-bottom: 2rem;
-}
-
 /* Summary Section */
 .summary {
     background-color: #ffffff;
@@ -102,11 +94,12 @@ section {
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease-in-out;
 }
 
 .summary h2 {
     margin-bottom: 0.5rem;
-    color: #0066cc;
+    color: #5CADFF;
 }
 
 /* Team Results Table */
@@ -114,6 +107,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 1rem;
+    animation: fadeIn 1.2s ease-in-out;
 }
 
 th, td {
@@ -141,6 +135,7 @@ tr:nth-child(even) {
     padding: 1rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
+    animation: fadeInUp 1s ease-in-out;
 }
 
 #individual-results .athlete:hover {
@@ -156,24 +151,13 @@ tr:nth-child(even) {
     object-fit: cover;
 }
 
-#individual-results dl {
-    margin: 0;
-}
-
-#individual-results dt {
-    font-weight: bold;
-}
-
-#individual-results dd {
-    margin-left: 1rem;
-}
-
 /* Gallery Section */
 #gallery {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 #gallery img {
@@ -181,7 +165,7 @@ tr:nth-child(even) {
     object-fit: cover;
     width: 100px;
     height: 100px;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease;
 }
 
 #gallery img:hover {
@@ -195,6 +179,7 @@ footer {
     text-align: center;
     padding: 1rem;
     margin-top: 2rem;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 footer a {
@@ -204,9 +189,8 @@ footer a {
     display: inline-block;
 }
 
-/* Improved Footer Link Hover */
 footer a:hover, footer a:focus {
-    color: #ffcc00; /* Yellow for contrast against dark background */
+    color: #ffcc00;
 }
 
 address {
@@ -214,7 +198,50 @@ address {
     line-height: 1.4;
 }
 
-/* Media Queries for Larger Screens */
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries */
 @media (min-width: 768px) {
     nav ul {
         flex-direction: row;
@@ -233,7 +260,7 @@ address {
     }
 }
 
-/* Dark Mode Styles */
+/* Dark Mode */
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #121212;
@@ -245,11 +272,11 @@ address {
     }
 
     a {
-        color: #4dabf7; /* Bright blue for better visibility in dark mode */
+        color: #4dabf7;
     }
 
     a:hover, a:focus {
-        color: #ffcc00; /* Light blue for better contrast in dark mode */
+        color: #ffcc00;
     }
 
     .summary {
@@ -270,7 +297,7 @@ address {
     }
 }
 
-/* Animation for Reduced Motion Preference */
+/* Animation Control for Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
     * {
         transition: none;

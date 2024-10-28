@@ -1,0 +1,99 @@
+/* Reset CSS */
+
+/* 1. Set all elements to have no padding, margin, or borders */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. Reset heading sizes and font styles */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* 3. Make sure block elements take up full width */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+/* 4. Set body to use 100% height */
+html, body {
+    height: 100%;
+}
+
+/* 5. Remove bullet points and indentations from lists */
+ol, ul {
+    list-style: none;
+}
+
+/* 6. Ensure all elements are inheriting fonts and line-height */
+body {
+    line-height: 1.6;
+    font-family: 'Arial', sans-serif;
+    background-color: white;
+    color: black;
+}
+
+/* 7. Make sure tables don't have extra spacing */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* 8. Ensure media elements and images fit their containers */
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 9. Remove underlines from links by default */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 10. Reset forms and inputs */
+input, button, textarea, select {
+    font: inherit;
+    border: none;
+    outline: none;
+}
+
+/* 11. Adjust border-box behavior */
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+/* 12. Handle the main and summary tags consistently */
+main {
+    display: block;
+}
+
+summary {
+    display: list-item;
+}
+
+/* 13. Hide focus outlines by default, allowing custom focus styles later */
+:focus {
+    outline: none;
+}
