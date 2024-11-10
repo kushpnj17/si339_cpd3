@@ -284,6 +284,10 @@ address {
         color: #e0e0e0;
     }
 
+    .summary h2 {
+        color: #4e89c4;
+    }
+
     th {
         background-color: #1976d2;
     }
