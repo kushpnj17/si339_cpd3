@@ -138,8 +138,10 @@ tr:nth-child(even) {
     animation: fadeInUp 1s ease-in-out;
 }
 
-#individual-results .athlete:hover {
+#individual-results .athlete:hover,
+#individual-results .athlete:focus-within {
     transform: scale(1.02);
+    border: solid black 1px;
 }
 
 #individual-results .athlete figure {
@@ -299,6 +301,12 @@ address {
     #individual-results .athlete {
         background-color: #393131;
     }
+
+    #individual-results .athlete:hover,
+    #individual-results .athlete:focus-within {
+    transform: scale(1.02);
+    border: solid white 1px;
+}
 }
 
 /* Animation Control for Reduced Motion */
